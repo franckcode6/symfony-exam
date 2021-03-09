@@ -22,10 +22,9 @@ class ContactRepository extends ServiceEntityRepository
     public function searchInEmail()
     {
         $qb = $this->createQueryBuilder('c');
-        $qb ->where('c.email LIKE :email')
-        ->setParameter('email', 'test@test.com')
-        ->orderBy('c.email', 'ASC')
-        ;
+        $qb->where('c.email LIKE :email')
+            ->setParameter('email', 'test@test.com')
+            ->orderBy('c.email', 'ASC');
 
         return $qb->getQuery()->getResult();
     }

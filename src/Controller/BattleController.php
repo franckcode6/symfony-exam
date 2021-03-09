@@ -31,9 +31,9 @@ class BattleController extends AbstractController
         $runs = $this->runBattle($legolas, $gimli);
 
         return $this->render('battle/test.html.twig', [
-            'gimli'   => $gimli,
+            'gimli' => $gimli,
             'legolas' => $legolas,
-            'runs'    => $runs,
+            'runs' => $runs,
         ]);
     }
 
@@ -66,9 +66,9 @@ class BattleController extends AbstractController
         }
 
         return [
-            'attacker'     => $attacker->getName(),
-            'defender'     => $defender->getName(),
-            'damage'       => $damage,
+            'attacker' => $attacker->getName(),
+            'defender' => $defender->getName(),
+            'damage' => $damage,
             'attackerWins' => $defender->hasGivenUp(),
         ];
     }
