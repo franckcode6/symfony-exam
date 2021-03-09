@@ -4,5 +4,34 @@
         <h1>{{ 'Un titre magnifique'|title }}</h1>
     {% endblock %}
 
-    {% block content %}{% endblock %}
+    {% block content %}
+        <table>
+            <tr>
+                <th>Identifiant</th>
+                <th>Email</th>
+                <th>Sujet</th>
+                <th>Message</th>
+                <th>Créé le</th>
+            </tr>
+            {% for contact in contacts %}
+                <tr>
+                    <td>
+                        {{ contact.id }}
+                    </td>
+                    <td>
+                        {{ contact.email }}
+                    </td>
+                    <td>
+                        {{ contact.subject }}
+                    </td>
+                    <td>
+                        {{ contact.message }}
+                    </td>
+                    <td>
+                        {# {{ contact.created_at }} #}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endblock %}
 
