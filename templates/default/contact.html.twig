@@ -5,6 +5,10 @@
     {% endblock %}
 
     {% block content %}
+        {{ form_start(form) }}
+        {{ form_rest(form) }}
+        <button type="submit" class="btn btn-success">Valider</button>
+        {{ form_end(form) }}
         <div>
             Nous sommes actuellement le : {{ "now"|date("d/m/Y H:i:s") }}
         </div>
