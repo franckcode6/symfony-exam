@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% block header %}{% endblock %}
+
+    <div class="container-fluid">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% block footer %}
+        <div>Un site tout droit libre de tous droits</div>
+    {% endblock %}
+
+{% endblock %}
+
