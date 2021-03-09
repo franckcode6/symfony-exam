@@ -4,7 +4,11 @@ namespace App\Services;
 
 class DiceThrower
 {
-    function rollDices($diceNb, $sideNb)
+    private $diceNb;
+
+    private $sidenb;
+
+    public function rollDices($diceNb, $sideNb)
     {
         if ($diceNb > 0 && $sideNb > 1) {
             for ($i = 1; $i <= $diceNb; $i++) {

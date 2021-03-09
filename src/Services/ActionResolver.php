@@ -1,29 +1,39 @@
 <?php
+
 namespace App\Services;
 
 use App\Services\DiceThrower;
 
-class ActionResolver {
-
-
-function attack($attacker, $defender)
+class ActionResolver
 {
 
-    $testAttack = DiceThrower.rollHundred(1);
+    private $testAttack;
 
-    if ($testAttack > $attacker.strength) {
-        return Null;
+    private $diceThrower;
+
+
+    public function __construct(DiceThrower $diceThrower)
+    {
+        $this->diceThrower = $diceThrower;
     }
 
-    $testDefense = DiceThrower.rollHundred(1);
+    function attack($attacker, $defender)
+    {
+        $testAttack = $this->diceThrower->rollHundred(1);
 
-    if ($testDefense > $defender.defense) {
-        return Null;
+        if ($testAttack > $attacker->strength) {
+            return Null;
+        }
+
+        $testDefense = $this->diceThrower->rollHundred(1);
+
+        if ($testDefense > $defender->defense) {
+            return Null;
+        }
+
+        $damages = $this->diceThrower->rollTwenty(6);
+
+        return array_sum($damages);
     }
-
-    $damages = DiceThrower.rollTwenty(6);
-
-    return array_sum($damages);
-}
 }
 
