@@ -19,7 +19,7 @@ class DiceThrower
         }
     }
 
-    function rollTwenty($diceNb)
+    public function rollTwenty($diceNb)
     {
         if ($diceNb > 0) {
             for ($i = 1; $i <= $diceNb; $i++) {
@@ -30,7 +30,7 @@ class DiceThrower
         }
     }
 
-    function rollHundred($diceNb)
+    public function rollHundred($diceNb)
     {
         if ($diceNb > 0) {
             for ($i = 1; $i <= $diceNb; $i++) {
